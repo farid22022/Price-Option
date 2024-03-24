@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "../Link/Link";
-import { AiOutLineMenu , AiOutLineClose} from "react-icons/ai";
+import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { RxCross1 } from "react-icons/rx";
 
 
 const NavBar = () => {
@@ -20,12 +21,14 @@ const NavBar = () => {
 
     return (
         <nav>
-            <div className="md:hidden " onClick={() => setOpen(!open)}>
+            <div className="text-3xl" onClick={() => {setOpen(!open)}}>
                 {
-                    open === true ?<AiOutLineMenu className="text-3xl md:hidden"></AiOutLineMenu> : <AiOutLineClose className="text-3xl md:hidden"></AiOutLineClose>
+                    open === true?
+                    <HiOutlineMenuAlt1 />:
+                    <RxCross1 />
                 }
-                
             </div>
+            
             <ul className="md:flex">
                 {
                     routes.map(route =><Link key={route.id} route={route}></Link>)

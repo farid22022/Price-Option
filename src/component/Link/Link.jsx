@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Link = ({route}) => {
     return (
         <nav>
-            
+             
              <li className="mr-6" > 
                 <a href={route.path}>{route.name}</a>
              </li>
